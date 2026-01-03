@@ -1,0 +1,12 @@
+{
+  "background_color": "#ffffff",
+  "dir": "auto",
+  "display": "standalone",
+  "name": "Grocery App",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "Grocery",
+  "start_url": "index.html",
+  "theme_color": "#4caf50",
+  "lang": "en"
+}
