@@ -1,0 +1,89 @@
+<!-- Just paste this content in index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Grocery App</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="header">
+  <h2>🛒 Grocery Store</h2>
+  <input type="text" id="search" placeholder="Search items..." oninput="searchItems()">
+  <button id="modeBtn" onclick="toggleMode()">🌙 Dark Mode</button>
+</div>
+
+<div class="products" id="products">
+  <!-- Cards with data-name for search -->
+  <div class="card" data-name="rice">
+    <img src="images/rice.jpg">
+    <h3>Rice</h3>
+    <p>₹50</p>
+    <div class="qty">
+      <button onclick="changeQty('rice', -1)">-</button>
+      <span id="riceQty">0</span>
+      <button onclick="changeQty('rice', 1)">+</button>
+    </div>
+  </div>
+
+  <div class="card" data-name="wheat">
+    <img src="images/wheat.jpg">
+    <h3>Wheat</h3>
+    <p>₹40</p>
+    <div class="qty">
+      <button onclick="changeQty('wheat', -1)">-</button>
+      <span id="wheatQty">0</span>
+      <button onclick="changeQty('wheat', 1)">+</button>
+    </div>
+  </div>
+
+  <div class="card" data-name="milk">
+    <img src="images/milk.jpg">
+    <h3>Milk</h3>
+    <p>₹30</p>
+    <div class="qty">
+      <button onclick="changeQty('milk', -1)">-</button>
+      <span id="milkQty">0</span>
+      <button onclick="changeQty('milk', 1)">+</button>
+    </div>
+  </div>
+
+  <div class="card" data-name="oil">
+    <img src="images/oil.jpg">
+    <h3>Oil</h3>
+    <p>₹120</p>
+    <div class="qty">
+      <button onclick="changeQty('oil', -1)">-</button>
+      <span id="oilQty">0</span>
+      <button onclick="changeQty('oil', 1)">+</button>
+    </div>
+  </div>
+</div>
+
+<div class="cart">
+  <h3>Total: <span id="total">₹0</span></h3>
+  <button onclick="openCheckout()">Checkout</button>
+  <button onclick="viewHistory()">Order History</button>
+</div>
+
+<div id="checkout" class="modal">
+  <div class="modal-content">
+    <h3>Checkout</h3>
+    <div id="summary"></div>
+    <button onclick="confirmOrder()">Confirm Order</button>
+    <button onclick="closeCheckout()">Close</button>
+  </div>
+</div>
+
+<div id="historyModal" class="modal">
+  <div class="modal-content">
+    <h3>Order History</h3>
+    <div id="historyContent"></div>
+    <button onclick="closeHistory()">Close</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
